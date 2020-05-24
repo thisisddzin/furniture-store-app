@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'models/apps/ifood.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -8,6 +10,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    Ifood ifood = new Ifood();
+
+    ifood.term      = "pastel";
+    ifood.latitude  = "-3.809492499999999";
+    ifood.longitude = "-38.58727510000001";
+
+    ifood.fetchRestaurants();
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -26,7 +36,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Lomy'),
     );
   }
 }
