@@ -11,7 +11,7 @@ class Ifood extends DeliveryTemplate {
   String longitude;
   String term;
 
-  Future fetchRestaurants() async {
+  Future<Map> fetchRestaurants() async {
     String url = mainUrl + "merchants";
     url += "?latitude=$latitude";
     url += "&longitude=$longitude";
